@@ -24,5 +24,5 @@ export async function getById(req: Request, res: Response) {
   const id = +req.params.id;
   const question = await questionService.getById(id);
   const answers = await answerService.getByQuestionId(id);
-  res.json({ question , answers });
+  res.json({ id: question.id, question: question.question, answers: answers});
 }
