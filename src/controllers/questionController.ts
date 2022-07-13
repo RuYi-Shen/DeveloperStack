@@ -3,7 +3,7 @@ import answerService from "../services/answerService.js";
 import questionService  from "../services/questionService.js";
 
 export async function create(req: Request, res: Response) {
-  const { question } = req.body;
+  const question = req.body;
   await questionService.create(question);
   res.sendStatus(201);
 }
